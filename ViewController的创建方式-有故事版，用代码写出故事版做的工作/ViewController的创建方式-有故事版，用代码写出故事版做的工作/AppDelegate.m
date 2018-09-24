@@ -21,34 +21,31 @@
     // Override point for customization after application launch.
     
     /**
-     1、创建程序的窗口（UIWindow的实例化对象）。
+     1、创建程序的窗口（UIWindow的实例化对象）：
      */
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     /**
-     2、加载storyboard文件，并且利用instantiateInitialViewController方法来创建箭头所指向的视图控制器。
-     */
-    
-    /**
-     (1)加载storyBoard文件：下面方法里面的bundle:后面的参数可以如下填写也可以填写为nil，因为nil就代表mainBundle。
+     2、加载storyboard文件：
+     下面方法中的bundle:后面的参数可以如下填写也可以填写为nil，因为nil就代表mainBundle。
      */
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     /**
-     （2）利用instantiateInitialViewController方法创建箭头所指向的视图控制器；
+     3、创建storyboard文件中箭头所指向的视图控制器：
      多肽，父类可以指向子类的指针，实际上生成的vc是属于ViewController类的。
      */
     UIViewController *vc = [storyBoard instantiateInitialViewController];
     NSLog(@"%@", [vc class]);
     
     /**
-     如果不想加载箭头所指向的视图控制器，也可以将要加载的视图控制器在storyBoard文件里设置它的StoryBoard ID，然后利用这个StoryBoard ID来定向加载这个视图控制器；
+     如果不想加载箭头所指向的视图控制器，也可以将要加载的视图控制器在storyBoard文件里设置它的StoryBoard ID，然后利用StoryBoard ID来定向加载这个视图控制器；
      如下，实际上这个生成的vc是属于UIViewController类的。
      */
 //    UIViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"green"];
 //    NSLog(@"%@", [vc class]);
     
     /**
-     3、用上面创建的视图控制器来充当窗口的根视图控制器，然后使窗口成为主窗口并且显示出来。
+     4、用上面创建的视图控制器来做窗口的根视图控制器，然后使窗口成为主窗口并显示出来：
      */
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
