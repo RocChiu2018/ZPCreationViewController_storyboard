@@ -48,7 +48,7 @@
 //    NSLog(@"%@", [vc class]);
     
     /**
-     用上面创建的视图控制器来充当窗口的根视图控制器，然后使窗口成为主窗口并且显示出来。
+     3、用上面创建的视图控制器来充当窗口的根视图控制器，然后使窗口成为主窗口并且显示出来。
      */
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
